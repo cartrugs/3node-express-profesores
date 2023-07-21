@@ -1,24 +1,19 @@
 <%- include('templates/nav.ejs') %>
-<%- include('templates/header.ejs') %>
+<%- include('templates/header.ejs', {
+    title: 'Profesores',
+    descripcion: 'Esta es la descripción de profesores'
+}) %>
 
-<main>
+    
     <section class="profesores">
-        <h2>Profesores</h2>
-        <div class="profesor">
-            <img src="/assets/profesor1.jpeg" alt="Profesor 1">
-            <h3>Nombre del Profesor 1</h3>
-            <p>Descripción del Profesor 1.</p>
-        </div>
-        <div class="profesor">
-            <img src="/assets/profesor2.jpg" alt="Profesor 2">
-            <h3>Nombre del Profesor 2</h3>
-            <p>Descripción del Profesor 2.</p>
-        </div>
-        <div class="profesor">
-            <img src="/assets/profesor3.avif" alt="Profesor 3">
-            <h3>Nombre del Profesor 3</h3>
-            <p>Descripción del Profesor 3.</p>
-        </div>
+        <h2 id="profesores-background"><%= titular %></h2>
+        <% datosProfesores.forEach(element => { %>
+            <div class="profesor">
+                <img src="/assets/<%=element.url%>" alt="/assets/<%=element.alt%>">
+                <h4><%= element.titulo %></h4>
+                <p><%= element.descripcion %></p>
+            </div>
+        <% }) %>
     </section>
 
 <%- include('templates/footer.ejs') %>

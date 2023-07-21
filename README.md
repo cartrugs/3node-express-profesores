@@ -21,7 +21,7 @@ Este es un proyecto que muestra información sobre cursos, profesores y contacto
 1. Clona el repositorio: `git clone https://github.com/tu_usuario/tu_proyecto.git`
 2. Abre los archivos HTML en tu navegador preferido.
 3. Explora las diferentes secciones del sitio web.
-
+4. Para utilizar el programa es necesario contar con `express` y para iniciarlo con el comando por terminal: `npm run dev`.
 ## Estilos
 
 El sitio web utiliza estilos CSS definidos en el archivo `css/main.css`. 

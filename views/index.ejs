@@ -1,7 +1,17 @@
 <%- include('templates/nav.ejs') %>
-<%- include('templates/header.ejs') %>
+<%- include('templates/header.ejs', {
+    title: 'Index',
+    descripcion: 'Esta es la descripción del index'
+}) %>
 
 <main>
+    <div class="imagen-alumnos">
+        <img src="assets/alumnos2.jpg" alt="">
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, qui culpa. Rerum doloremque provident, aliquam modi vero atque excepturi sequi minus placeat tenetur, quisquam, minima neque perferendis accusantium magnam repellat!></p>
+    <div class="imagen-alumnos">
+        <img src="assets/alumnos.jpeg" alt="">
+    </div>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, qui culpa. Rerum doloremque provident, aliquam modi vero atque excepturi sequi minus placeat tenetur, quisquam, minima neque perferendis accusantium magnam repellat!></p>
 </main>
 

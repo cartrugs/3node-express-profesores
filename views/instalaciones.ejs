@@ -1,16 +1,17 @@
 <%- include('templates/nav.ejs') %>
-<%- include('templates/header.ejs') %>
+<%- include('templates/header.ejs', {
+    title: 'Instalaciones',
+    descripcion: 'Esta es la descripción de instalaciones'
+}) %>
 
-<h1>Galería de imágenes</h1>
-    <main>
-        <div class="gallery">
-            <img src="/assets/imagen1.jpg" alt="Imagen 1">
-            <img src="/assets/imagen2.jpg" alt="Imagen 2">
-            <img src="/assets/imagen3.jpg" alt="Imagen 3">
-            <img src="/assets/imagen4.jpg" alt="Imagen 4">
-            <img src="/assets/imagen5.jpg" alt="Imagen 5">
-            <img src="/assets/imagen6.jpg" alt="Imagen 6">
-        </div>
-    </main>
+
+<section>
+    <h2 cla><%= titular %></h2>
+    <div class="gallery">
+        <% galeriaInstalaciones.forEach(element => { %>
+            <img src="/assets/<%=element.url%>" alt="/assets/<%=element.alt%>">
+        <% }) %>
+    </div>
+</section>
 
 <%- include('templates/footer.ejs') %>

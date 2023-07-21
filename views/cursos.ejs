@@ -1,20 +1,19 @@
 <%- include('templates/nav.ejs') %>
-<%- include('templates/header.ejs') %>
+<%- include('templates/header.ejs', {
+    title: 'Cursos',
+    descripcion: 'Esta es la descripción de cursos'
+}) %>
 
-<main>
-    <h2>cursos</h2>
+<article>
+    <h2 id="cursosHeader">cursos</h2>
 
     <section>
-        <ul>
-            <li class="cursos">curso 1</li>
-            <li class="cursos">curso 2</li>
-            <li class="cursos">curso 3</li>
-            <li class="cursos">curso 4</li>
-            <li class="cursos">curso 5</li>
-            <li class="cursos">curso 6</li>
-            <li class="cursos">curso 7</li>
-        </ul>
+        <% tipo.forEach(element => { %>
+            <ul>
+                <li class="cursosLista"><%= element.numero %></li>
+            </ul>    
+        <% }) %>
     </section>
-</main>
+</article>
 
 <%- include('templates/footer.ejs') %>
