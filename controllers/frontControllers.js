@@ -13,25 +13,25 @@ const getCursos = (req, res) => {
     titulo: 'cursos',
     tipo: [
       {
-        numero: 'curso 1',
+        numero: 'animación',
       },
       {
-        numero: 'curso 2',
+        numero: 'fotografía',
       },
       {
-        numero: 'curso 3',
+        numero: 'música',
       },
       {
-        numero: 'curso 4',
+        numero: 'dirección',
       },
       {
-        numero: 'curso 5',
+        numero: 'script',
       },
       {
-        numero: 'curso 6',
+        numero: 'iluminación',
       },
       {
-        numero: 'curso 7',
+        numero: 'producción',
       },
     ],
   });
