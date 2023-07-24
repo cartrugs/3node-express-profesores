@@ -3,7 +3,9 @@
  */
 const express = require('express');
 
-
+/**
+ * Importar el módulo de mongoose en app.js {desetructuración}
+ */
 const {dbConnect} = require('./utils/connection');
 require('dotenv').config()
 
@@ -26,6 +28,9 @@ app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs')
 
+/**
+ * Invocación función dbConnect
+ */
 dbConnect()
 
 /**
@@ -33,11 +38,11 @@ dbConnect()
  */
 app.use('/', require('./routes/frontRoutes'))
 
-app.use((req, res) => {
-    res.status(404).render('404', {
-        titulo: 'error 404'
-    })
-});
+// app.use((req, res) => {
+//     res.status(404).render('404', {
+//         titulo: 'error 404'
+//     })
+// });
 
 app.listen(port, () => {
     console.log(`Está a la escucha del puerto ${port}`)

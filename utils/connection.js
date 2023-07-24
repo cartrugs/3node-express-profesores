@@ -9,4 +9,7 @@ const dbConnect = async () => {
     }
 }
 
+/**
+ * Exportación de dbConnect
+ */
 module.exports = {dbConnect};

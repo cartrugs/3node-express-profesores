@@ -6,10 +6,11 @@
 
 
 <section class="instalacionesSection">
-    <h2 class="titularH2Estilo"><%= titular %></h2>
+    <h2 class="titularH2Estilo"><%= titulo %></h2>
     <div class="gallery">
-        <% galeriaInstalaciones.forEach(element => { %>
+        <% instalaciones.forEach(element => { %>
             <img src="/assets/<%=element.url%>" alt="/assets/<%=element.alt%>">
+            <p class="instalacionesParrafo"><%= element.zona %></p>
         <% }) %>
     </div>
 </section>
