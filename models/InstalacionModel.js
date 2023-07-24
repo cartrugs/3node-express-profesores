@@ -1,5 +1,11 @@
+/**
+ * Importación funcionalidad necesaria biblioteca mongoose
+ */
 const { Schema, model } = require('mongoose');
 
+/**
+ * Creación esquema instalacioSchema. Cada clave dentro del objeto instalacionSchema representa un campo que tendrá cada documento del modelo 'Instalaciones'
+ */
 const instalacionSchema = new Schema ({
 
     url: {
@@ -16,4 +22,7 @@ const instalacionSchema = new Schema ({
 
 });
 
-module.exports = model('Instalaciones', instalacionSchema);
+/**
+ * Exportación del modelo 'Instalaciones'
+ */
+module.exports = model('Instalaciones', instalacionSchema); //¿Plural?

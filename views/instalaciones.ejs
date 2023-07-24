@@ -9,8 +9,11 @@
     <h2 class="titularH2Estilo"><%= titulo %></h2>
     <div class="gallery">
         <% instalaciones.forEach(element => { %>
-            <img src="/assets/<%=element.url%>" alt="/assets/<%=element.alt%>">
-            <p class="instalacionesParrafo"><%= element.zona %></p>
+            <div class="gallery-container">
+                <img src="/assets/<%=element.url%>" alt="/assets/<%=element.alt%>">
+                <p class="instalacionesParrafo"><%= element.zona %></p>
+            </div>
+            
         <% }) %>
     </div>
 </section>

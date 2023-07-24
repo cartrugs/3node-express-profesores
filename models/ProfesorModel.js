@@ -31,4 +31,4 @@ const profesorSchema = new Schema({
 /**
  * Exportación del modelo 'Profesores'
  */
-module.exports = model('Profesores', profesorSchema);
+module.exports = model('Profesores', profesorSchema); //¿Plural?
