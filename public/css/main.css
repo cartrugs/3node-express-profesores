@@ -41,7 +41,7 @@ img {
 
 nav {
   display: flex;
-  margin: 0;
+  margin: 5px 0 0;
 }
 
 nav ul {
@@ -280,6 +280,11 @@ footer p {
 @media screen and (min-width: 992px) {
 
   /* navegación y header*/
+
+  nav {
+    display: flex;
+    margin: 5px 5px 0;
+  }
 
   nav ul {
     flex-direction: row;

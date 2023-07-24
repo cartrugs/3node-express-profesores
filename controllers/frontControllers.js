@@ -1,4 +1,10 @@
 /**
+ * Método para usar el modelo de la base de datos
+ */
+const Profesor = require('../models/ProfesorModel');
+const Curso = require('../models/CursoModel')
+
+/**
  * Método de controlador para index
  * */
 const getIndex = (req, res) => {
@@ -8,34 +14,49 @@ const getIndex = (req, res) => {
 /**
  * Método de controlador para cursos
  * */
-const getCursos = (req, res) => {
-  res.render('cursos', {
-    titulo: 'cursos',
-    tipo: [
-      {
-        numero: 'animación',
-      },
-      {
-        numero: 'fotografía',
-      },
-      {
-        numero: 'música',
-      },
-      {
-        numero: 'dirección',
-      },
-      {
-        numero: 'script',
-      },
-      {
-        numero: 'iluminación',
-      },
-      {
-        numero: 'producción',
-      },
-    ],
-  });
-};
+const getCursos = async(req, res) => {
+  
+  try {
+    const cursos = await Curso.find();
+
+    res.render('cursos', {
+      cursos
+
+
+
+    })
+  } catch (error) {
+    console.log(error)
+  }
+}
+// const getCursos = (req, res) => {
+//   res.render('cursos', {
+//     titulo: 'cursos',
+//     tipo: [
+//       {
+//         numero: 'animación',
+//       },
+//       {
+//         numero: 'fotografía',
+//       },
+//       {
+//         numero: 'música',
+//       },
+//       {
+//         numero: 'dirección',
+//       },
+//       {
+//         numero: 'script',
+//       },
+//       {
+//         numero: 'iluminación',
+//       },
+//       {
+//         numero: 'producción',
+//       },
+//     ],
+//   });
+// };
 
 /**
  * Método controlador para profesores

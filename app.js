@@ -3,12 +3,16 @@
  */
 const express = require('express');
 
+
+const {dbConnect} = require('./utils/connection');
+require('dotenv').config()
+
 /**
  * Se utiliza express
  */
 const app = express();
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
 /**
  * establecer la carpeta estática
@@ -21,6 +25,8 @@ app.use(express.static(__dirname + '/public'));
  */
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs')
+
+dbConnect()
 
 /**
  * Enruta a frontRoutes

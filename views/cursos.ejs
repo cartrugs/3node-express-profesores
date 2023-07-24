@@ -8,9 +8,12 @@
     <h2 class="titularH2Estilo">cursos</h2>
 
     <section class="cursosSection">
-        <% tipo.forEach(element => { %>
+        <% cursos.forEach(element => { %>
             <ul>
-                <li class="cursosLista"><%= element.numero %></li>
+                <li class="cursosLista"><%= element.nombre %></li>
+                <p class="parrafoCursos"><%= element.duracion %></p>
+                <p class="parrafoCursos"><%= `${element.precio}€` %></p>
+
             </ul>    
         <% }) %>
     </section>
