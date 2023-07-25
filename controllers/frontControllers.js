@@ -1,15 +1,43 @@
 /**
  * Método para usar el modelo de la base de datos.
  */
+const Home = require('../models/HomeModel');
 const Curso = require('../models/CursoModel');
 const Instalacion = require('../models/InstalacionModel');
 const Profesor = require('../models/ProfesorModel');
 
 /**
- * Método de controlador para index.
+ * Método de controlador para index con función asíncrona.
  * */
-const getIndex = (req, res) => {
-  res.render('index');
+const getIndex = async (req, res) => {
+  
+  try {
+    /**
+     * Realizar una consulta a la base de datos utilizando el modelo Home.
+     * El método find() busca todos los documentos en la colección asociada al modelo home.
+     * Esta consulta devuelve una promesa que se resuelve con una lista de documentos que coinciden con los criterios de búsqueda.
+     * Variable que devuelve el array
+     */
+    const home = await Home.find();
+    /**
+     * Utilizar el método res.render() para renderizar una vista llamada 'home'.
+     * El objeto que se pasa como segundo argumento a res.render() contiene los datos que se usarán en la vista.
+     * En este caso, se pasan dos datos: 'titulo' y 'home'.
+     * 'titulo': 'index' establece el título que se mostrará en la vista.
+     * 'home': homes pasa la lista home obtenida de la base de datos.
+     * La variable home contiene la lista de documentos devueltos por la consulta Home.find().
+     */
+    res.render('index', {
+      titulo: 'index',
+      home
+    })
+
+    /**
+   *Capturar y manejar posibles errores que puedan ocurrir durante la ejecución de la consulta o el renderizado de la vista. 
+   */  
+  } catch (error) {
+    console.log(error)
+  }   
 };
 
 /**
@@ -91,7 +119,6 @@ const getInstalaciones = async (req, res) => {
      * Esta consulta devuelve una promesa que se resuelve con una lista de documentos que coinciden con los criterios de búsqueda
      */
     const instalaciones = await Instalacion.find();
-
     /**
      * Utilizar el método res.render() para renderizar una vista llamada 'instalaciones'.
      * El objeto que se pasa como segundo argumento a res.render() contiene los datos que se usarán en la vista.

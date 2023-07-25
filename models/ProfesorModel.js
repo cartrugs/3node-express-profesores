@@ -10,12 +10,11 @@ const profesorSchema = new Schema({
 
     url: {
         type: String,
-        require: true,
-        unique: true
+        required: true,
     },
     alt: {
         type: String,
-        require: true
+        required: true
     },
     nombre: {
         type: String,
@@ -29,6 +28,6 @@ const profesorSchema = new Schema({
 });
 
 /**
- * Exportación del modelo 'Profesores'
+ * Exportación del modelo 'Proffesor' a la base de datos.
  */
-module.exports = model('Profesores', profesorSchema); //¿Plural?
+module.exports = model('Proffesor', profesorSchema); //¿Plural?

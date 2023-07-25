@@ -6,13 +6,13 @@
 
     
     <section class="profesoresSection">
-        <h2 class="titularH2Estilo"><%= titulo %></h2>
+        <h1 class="titularH2Estilo"><%= titulo %></h1>
         <% profesores.forEach(element => { %>
-            <div class="profesorCaja">
-                <img src="/assets/<%=element.url%>" alt="/assets/<%=element.alt%>">
+            <article class="profesorCaja">
+                <img src="assets/<%=element.url%>" alt="<%=element.alt%>">
                 <h4><%= element.nombre %></h4>
                 <p><%= element.descripcion %></p>
-            </div>
+            </article>
         <% }) %>
     </section>
 

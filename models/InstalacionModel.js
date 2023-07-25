@@ -8,13 +8,17 @@ const { Schema, model } = require('mongoose');
  */
 const instalacionSchema = new Schema ({
 
+    titulo: {
+        type: String,
+        required: true
+    },
     url: {
         type: String,
-        require: true
+        required: true
     },
     alt: {
         type: String,
-        require: true
+        required: true
     },
     zona: {
         type: String,
@@ -25,4 +29,4 @@ const instalacionSchema = new Schema ({
 /**
  * Exportación del modelo 'Instalaciones'
  */
-module.exports = model('Instalaciones', instalacionSchema); //¿Plural?
+module.exports = model('Instalation', instalacionSchema); //¿Plural?

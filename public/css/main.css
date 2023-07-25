@@ -5,6 +5,9 @@
   --color-accent: #8f8286;
   --color-text: #59595c;
   --color-background: #59595c;
+  --color-black: #000;
+  --color-white: #fff; 
+  --color-title-background: #ac6369; 
 }
 
 /* Estilos generales */
@@ -23,6 +26,10 @@ img {
   width: 100%;
 }
 
+.flexContainer {
+  display: flex;
+}
+
 .titularH2Estilo {
   background-color: var(--color-secondary);
   height: 300px;
@@ -35,6 +42,25 @@ img {
   margin: 0 auto 30px;
   letter-spacing: 0.5rem;
   font-size: 2rem;
+}
+
+.misCursosTresMilUno {
+  font-family: 'MuseoModerno', cursive;
+}
+
+.imagenesTitulos {
+  display: inline-block;
+  margin: 15px 20% 40px 20%;
+  background-color: var(--color-title-background);
+  color: rgb(211, 192, 205);
+  font-size: 3.5rem;
+  font-weight: bolder;
+  padding: 15px;
+  margin-bottom: 60px;
+  border-radius: 10px 35px 10px 35px;
+  width: 60%;
+  text-align: center;
+  letter-spacing: 0.5rem
 }
 
 /* Estilos nav */
@@ -50,7 +76,7 @@ nav ul {
   flex-direction: column;
   align-items: flex-start;
   border-radius: 30px;
-  border: 1px solid #000;
+  border: 1px solid var(--color-black);
   width: 80%;
   letter-spacing: 0.7em;
 }
@@ -65,7 +91,7 @@ li.navBar {
 
 a {
   text-decoration: none;
-  color: #000000;
+  color: var(--color-black);
 }
 
 a:hover {
@@ -88,10 +114,10 @@ main {
   padding: 20px;
 }
 
-h1 {
+h2 {
   display: inline-block;
   margin: 15px 20% 40px 20%;
-  background-color: #ac6369;
+  background-color: var(--color-title-background);
   color: rgb(211, 192, 205);
   font-size: 3.5rem;
   font-weight: bolder;
@@ -103,6 +129,16 @@ h1 {
   letter-spacing: 0.5rem;
 }
 
+h2.imagenesTitulos {
+  display: flex;
+  justify-content: baseline;
+  font-size: 1.3rem;
+  padding: 20px;
+  height: min-content;
+  width: 100%;
+  margin: 0 auto 60px
+}
+
 .imagen-alumnos {
   display: flex;
   justify-content: center;
@@ -111,7 +147,6 @@ h1 {
 }
 
 .imagen-alumnos img {
-  /* max-width: 100%; */
   height: auto;
   border-radius: 5px;
 }
@@ -148,25 +183,18 @@ li.cursosLista {
 
 .parrafoCursos {
   margin: 5px 0 5px;
-  color: #000;
+  color: var(--color-black);
   font-size: 1.4rem;
   text-align: right; 
 }
 
-#cursosHeader {
-  display: inline-block;
-  background-color: var(--color-secondary);
-  color: #fff;
-  height: 50px;margin-left: 10px;
-  margin-bottom: 40px;
-  padding: 10px;
-  border-radius: 10px;
-}
-
 /* Estilos contacto */
 
-form {
-  margin-top: 70px;
+form.flexContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 70px auto;
   font-size: 1.4em;
 }
 
@@ -193,7 +221,7 @@ textarea {
 input[type=submit] {
   padding: 10px 20px;
   background-color: var(--color-accent);
-  color: #fff;
+  color: var(--color-white);
   border: none;
   cursor: pointer;
   margin-bottom: 50px;
@@ -232,7 +260,7 @@ input[type=submit]:hover {
 /* Estilos para el párrafo de instalaciones */
 .instalacionesParrafo {
   margin-top: 10px;
-  color: #000;
+  color: var(--color-black);
   font-size: 1.5rem;
   text-align: center;
 }
@@ -267,7 +295,7 @@ input[type=submit]:hover {
 
 .profesorCaja p {
   margin-top: 5px;
-  color: #000;
+  color: var(--color-black);
   font-size: 1.5rem;
 }
 
@@ -280,7 +308,7 @@ footer {
 
 footer p {
   font-size: 1.3rem;
-  color: #ffffff;
+  color: var(--color-white);
   margin-bottom: 5px;
   text-align: center;
 }
@@ -294,7 +322,8 @@ footer p {
 
 } 
 
-/* min-width: 992px */
+/* ===============min-width: 992px=============== */
+
 @media screen and (min-width: 992px) {
 
   /* navegación y header*/
@@ -308,28 +337,35 @@ footer p {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    font-size: 0.7rem;
+    font-size: 1rem;
     color: var(--color-secondary);
     width: 100%;
+    border-radius: 15px;
   }
 
   ul {
-    height: 100px;
+    height: auto;
+    margin: 10px 0 35px; 
+    padding: 3px;
   }
 
   li {
-    font-size: 1.7rem;
-    margin: 5px 20px;
+    font-size: 1.3rem;
+    margin: 5px 10px;
+    
   }
 
   .navBar {
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     border-radius: 3px;
-  border-right: 1px solid #504f4f;
+    border-right: 1px solid #504f4f;
   }
 
-  h1 {
+  .misCursosTresMilUno {
+    display: flex;
     font-size: 6rem;
+    width: 35%;
+    margin: 0 auto 60px;
   }
 
   /* generales */
@@ -343,15 +379,22 @@ footer p {
 
   .parrafoIndex {
     width: 55%;
-    margin: 0 auto 30px auto;
+    margin: 0 auto 30px;
     font-size: 2rem;
+  }
+
+  /* Estilos cursos */
+
+  ul {
+    margin: 10px 40px 35px;
+    padding: 3px;  
   }
 
   /* Estilos contacto */
 
-  form {
+  form.flexContainer {
     font-size: 1.7em;
-    width: 60%;
+    width: 45%;
     margin: 70px auto ;
   }
 
@@ -376,4 +419,4 @@ footer p {
     text-align: center;
     margin-top: 10px;
   }
-}
+}/* =========992========= */

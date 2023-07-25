@@ -5,14 +5,23 @@
 }) %>
 
 <main>
-    <div class="imagen-alumnos">
+    <% home.forEach(element => { %>
+        <article>
+            <div class="imagen-alumnos" >
+                <img src="assets/<%= element.url %>" alt="<%= element.alt %>">
+            </div> 
+            <p class="parrafoIndex"><%= element.texto %></p>
+        </article>
+     
+    <% }) %>
+    <!-- <div class="imagen-alumnos">
         <img src="assets/alumnos2.jpg" alt="">
     </div>
     <p class="parrafoIndex">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, qui culpa. Rerum doloremque provident, aliquam modi vero atque excepturi sequi minus placeat tenetur, quisquam, minima neque perferendis accusantium magnam repellat!></p>
     <div class="imagen-alumnos">
         <img src="assets/alumnos.jpeg" alt="">
     </div>
-    <p class="parrafoIndex">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, qui culpa. Rerum doloremque provident, aliquam modi vero atque excepturi sequi minus placeat tenetur, quisquam, minima neque perferendis accusantium magnam repellat!></p>
-</main>
+    <p class="parrafoIndex">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, qui culpa. Rerum doloremque provident, aliquam modi vero atque excepturi sequi minus placeat tenetur, quisquam, minima neque perferendis accusantium magnam repellat!></p> -->
+
 
 <%- include('templates/footer.ejs') %>

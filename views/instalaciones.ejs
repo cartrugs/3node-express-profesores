@@ -6,13 +6,16 @@
 
 
 <section class="instalacionesSection">
-    <h2 class="titularH2Estilo"><%= titulo %></h2>
+    <h1 class="titularH2Estilo"><%= titulo %></h1>
     <div class="gallery">
         <% instalaciones.forEach(element => { %>
-            <div class="gallery-container">
-                <img src="/assets/<%=element.url%>" alt="/assets/<%=element.alt%>">
+            <article class="gallery-container">
+                <div class="flexContainer titulos">
+                    <h2 class="imagenesTitulos"><%= element.titulo %></h2>
+                </div>
+                <img src="assets/<%=element.url%>" alt="<%=element.alt%>">
                 <p class="instalacionesParrafo"><%= element.zona %></p>
-            </div>
+            </article>
             
         <% }) %>
     </div>
